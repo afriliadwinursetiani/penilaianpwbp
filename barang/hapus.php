@@ -10,7 +10,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
 $role = $_SESSION['role'];
 
 // kalau bukan admin/owner/suplier → tendang
-if (!in_array($role, ['admin','owner',])) {
+if (!in_array($role, ['admin','suplier'])) {
     header("Location: ../login/login.php");
     exit();
 }
