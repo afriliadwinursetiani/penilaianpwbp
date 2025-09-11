@@ -106,6 +106,7 @@ $no = 1; // nomor urut
                 </td>
                 <td>
                     <a href="detailbarang.php?id=<?= $row['id_barang']; ?>" class="btn btn-info btn-sm">Detail</a>
+                    <a href="editbarang.php?id=<?= $row['id_barang']; ?>" class="btn suscess btn-sm">Detail</a>
                     <a href="hapus.php?tabel=barang&id=<?= $row['id_barang']; ?>&kolom=id_barang" 
                        class="btn btn-danger btn-sm" 
                        onclick="return confirm('Yakin hapus barang ini?')">Hapus</a>
