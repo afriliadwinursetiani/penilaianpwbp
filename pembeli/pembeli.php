@@ -76,7 +76,8 @@ $no = 1;  # nomor urut
             <th>Nomor Hp</th>
             
             <th>Aksi</th>
-        </tr>
+    </tr>
+      <?php if(mysqli_num_rows($result) > 0) { ?>
         <?php while($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
             <td><?= $no++;?></td>
@@ -95,6 +96,7 @@ $no = 1;  # nomor urut
             </td>
         </tr>
         <?php } ?>
+            <?php } ?>
     </table>
 </div>
 </body>
