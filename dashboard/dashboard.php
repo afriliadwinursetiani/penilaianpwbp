@@ -1,6 +1,6 @@
 <?php
 include "../koneksi/koneksi.php";
-include "../koneksi/koneksi.php"; 
+
 session_start();
 if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
     header("Location: ../login/login.php");
@@ -9,7 +9,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role'])) {
 $role = $_SESSION['role'];
 
 // kalau bukan admin/owner/suplier → tendang
-if (!in_array($role, ['admin','owner','kasir'])) {
+if (!in_array($role, ['admin','owner'])) {
     header("Location: ../login/login.php");
     exit();
 }
