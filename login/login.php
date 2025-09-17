@@ -18,12 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['role']     = $user['role'];
 
         // Arahkan sesuai role
-        if (in_array($user['role'], ['admin','owner'])) {
-            header("Location: ../dashboard/dashboard.php");
-        } elseif ($user['role'] == 'suplier') {
-            header("Location: ../barang/barang.php");
+        if (in_array($user['role'], ['admin'])) {
+            header("Location: ../dashboardadmin/dashboard.php");
+        } elseif ($user['role'] == 'owner') {
+            header("Location: ../dashboardowner/dashboard.php");
              } elseif ($user['role'] == 'kasir') {
-            header("Location: ../penjualan/penjualan.php");
+            header("Location:../dashboardkasir/dashboard.php");
+             } elseif ($user['role'] == 'suplier') {
+            header("Location:../suplier/dashboard.php");
         } else {
             $error = "Role tidak dikenali!";
         }
